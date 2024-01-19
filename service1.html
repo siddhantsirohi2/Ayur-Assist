@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AyurSearch</title>
+    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script>  -->
+
+</head>
+<body>
+    <header>
+        <h1>AYUR ASSIST</h1>
+        <p>Your Ayurvedic Wellness Partner</p>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Services <i class="arrow down"></i></a>
+            <div class="dropdown-content">
+                <a href="service1.html">AyurSearch</a>
+                <a href="service2.html">Herbal Remedies</a>
+                <a href="service3.html">Wellness Tips</a>
+            </div>
+        </div>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About Us</a>
+        <a href="contactUs.html">Contact Us</a>
+    </nav>
+
+    <main>
+        <section class="search-form">
+            <h2 style="text-align: center; font-size: 3rem;">AyurSearch</h2>
+            <h2>Search for Medicinal Plants</h2>
+            <form id="myform" onsubmit="return dotask()">
+                <label for="disease">Select Disease:</label>
+                <select id="disease" name="disease" onchange="populateSymptoms()">
+                    <option value="">--Select Any Disease--</option>
+                    <option value="arthritis">Arthritis</option>
+                    <option value="migraine">Migraine</option>
+                    <option value="digestiveIssues">Digestive Issues</option>
+                    <option value="skinRash">Skin Rash</option>
+                    <option value="diabetes">Diabetes</option>
+                    <option value="hypertension">Hypertension</option>
+                    <option value="cold">Cold</option>
+                    <option value="allergies">Allergies</option>
+                   
+                </select>
+                
+                <label for="symptom1">Select Extra Symptom 1 (Optional):</label>
+                <select id="symptom1" name="symptom1" onchange="updateSymptomLists()">
+                    <option value="">None</option>
+                </select>
+                
+                <label for="symptom2">Select Extra Symptom 2 (Optional):</label>
+                <select id="symptom2" name="symptom2">
+                    <option value="">None</option>
+                </select>
+                
+                <button type="submit" style="margin-top: 1rem; border: 0.5px solid green;" id="btn">Search</button>
+            </form>
+        </section>
+        
+        <section class="search-results" id="disp"  style="display: none;">
+            <h2 >Search Results</h2>
+            <p id="ans"></p>
+            <p id="one"></p>
+            <p id="two"></p>
+            <p id="three"></p>
+        </section>
+        
+    </main>
+    <footer >
+        &copy; 2023 AYUR ASSIST. All rights reserved.
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
